@@ -1,12 +1,17 @@
-<h1>These are all the Restaurants</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/260922/pexels-photo-260922.jpeg');">
+  <div class="banner-content">
+    <h1>Restaurants Guide</h1>
+  </div>
+</div>
+
 
 <ul class="index_list">
   <div class="container">
     <div class="row">
       <% @restaurants.each do |resto| %>
-        <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="col-xs-6 col-sm-4 col-md-3">
           <li id="test" class="resto_list">
-            <h3> <%= link_to resto.name, restaurant_path(resto) %> </h3>
+            <h3> <%= link_to resto.name, restaurant_path(resto), id: "resto_title"%> </h3>
             <h5> We offer <b><%= resto.category %></b> food</h5>
             <p> This is where you can find us: <b><%= resto.address %></b></p>
             <p> Our phone number: <b><%= resto.phone_number %></b></p>
