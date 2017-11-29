@@ -5,3 +5,11 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
 
+<h5>Our reviews:</h5>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li> <%= review.content %>  <%= review.rating %></li>
+  <% end  %>
+</ul>
+
+<h6><%= link_to "Write a review", new_restaurant_review_path(@restaurant) %></h6>
